@@ -81,6 +81,16 @@ class BowlingScoreCalculatorTest(unittest.TestCase):
         # Then it is not a valid input
         self.assertFalse(result)
 
+    def testInputLastBallAvailableWithSpare(self):
+        # Given the pinfall of frame 10 is spare and last pinfall > 0
+        inputs = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 7, 1]
+
+        # When check if the inputs are valid numbers
+        result = self.calculator.checkInputs(inputs)
+
+        # Then it is a valid input
+        self.assertTrue(result)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
