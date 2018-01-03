@@ -41,6 +41,16 @@ class BowlingScoreCalculatorTest(unittest.TestCase):
         # Then it is not a valid input
         self.assertFalse(result)
 
+    def testInputSumOfPinfallOfOneFrameNotGreatThan10(self):
+        # Given the pinfall of one frame <= 10
+        inputs = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 0]
+
+        # When check if the inputs are valid numbers
+        result = self.calculator.checkInputs(inputs)
+        
+        # Then it is a valid input
+        self.assertTrue(result)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
