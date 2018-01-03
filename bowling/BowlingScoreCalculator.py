@@ -5,6 +5,7 @@ class BowlingScoreCalculator:
     kMaxBallNum = 21
     kMinPinfall = 0
     kMaxPinfall = 10
+    kTotalFrame = 10
 
     def __init__(self):
         pass
@@ -18,6 +19,12 @@ class BowlingScoreCalculator:
             if pinfall < self.kMinPinfall:
                 return False
             elif pinfall > self.kMaxPinfall:
+                return False
+
+        for iFrame in range(self.kTotalFrame):
+            pinfall1 = inputs[iFrame * 2]
+            pinfall2 = inputs[iFrame * 2 + 1]
+            if pinfall1 + pinfall2 > self.kMaxPinfall:
                 return False
 
         return True
