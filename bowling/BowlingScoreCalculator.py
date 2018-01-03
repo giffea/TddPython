@@ -26,14 +26,17 @@ class BowlingScoreCalculator:
             pinfall2 = inputs[iFrame * 2 + 1]
             if pinfall1 + pinfall2 > self.kMaxPinfall:
                 if iFrame == self.kTotalFrame - 1:
-                    if pinfall1 == 10:
-                        return True
-                return False
+                    if pinfall1 != 10:
+                        return False
 
         pinfall1OfFrame10 = inputs[18]
         pinfall2OfFrame10 = inputs[19]
         pinfall3OfFrame10 = inputs[20]
         if pinfall1OfFrame10 + pinfall2OfFrame10 < 10:
+            if pinfall3OfFrame10 > 0:
+                return False
+
+        if pinfall1OfFrame10 == 10 and pinfall2OfFrame10 != 10:
             if pinfall3OfFrame10 > 0:
                 return False
 
