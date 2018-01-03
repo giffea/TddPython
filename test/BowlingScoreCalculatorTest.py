@@ -1,8 +1,11 @@
 import unittest
 
+from bowling.BowlingScoreCalculator import *
+
 
 class BowlingScoreCalculatorTest(unittest.TestCase):
     def setUp(self):
+        self.calculator = BowlingScoreCalculator()
         pass
 
     def tearDown(self):
@@ -13,6 +16,7 @@ class BowlingScoreCalculatorTest(unittest.TestCase):
         inputs = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
         # When check if the inputs are valid numbers
+        result = self.calculator.checkInputs(inputs)
 
         # Then it is a valid input
         self.assertTrue(result)
