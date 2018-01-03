@@ -111,6 +111,16 @@ class BowlingScoreCalculatorTest(unittest.TestCase):
         # Then it is a valid input
         self.assertTrue(result)
 
+    def testAllPinfall0(self):
+        # Given the pinfall of all balls is 0
+        inputs = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+        # When calculate the total scores
+        result = self.calculator.calculateScores(inputs)
+
+        # Then get total score is 0
+        self.assertEqual(result, 0)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
