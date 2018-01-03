@@ -41,3 +41,6 @@ class BowlingScoreCalculator:
                 return False
 
         return True
+
+    def calculateScores(self, inputs):
+        return 0
