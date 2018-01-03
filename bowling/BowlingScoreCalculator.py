@@ -30,4 +30,11 @@ class BowlingScoreCalculator:
                         return True
                 return False
 
+        pinfall1OfFrame10 = inputs[18]
+        pinfall2OfFrame10 = inputs[19]
+        pinfall3OfFrame10 = inputs[20]
+        if pinfall1OfFrame10 + pinfall2OfFrame10 < 10:
+            if pinfall3OfFrame10 > 0:
+                return False
+
         return True
