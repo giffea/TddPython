@@ -1,6 +1,3 @@
-#! /usr/env python3
-
-
 class BowlingScoreCalculator:
     kMaxBallNum = 21
     kMinPinfall = 0
